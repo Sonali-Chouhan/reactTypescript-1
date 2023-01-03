@@ -36,8 +36,9 @@ const AddUser = () => {
     formData.append("Post", state.Post);
     formData.append("Description", state.Description);
     formData.append("Active", state.Active);
-    formData.append("id", id ? id : "");
+   
     if (id) {
+      formData.append("id", id ? id : "");
       dispatch(UpdatePost(formData, id));
     } else {
       dispatch(AddPost(formData));
